@@ -11,7 +11,7 @@ object ApplicationBuild extends Build {
 		javaCore,
 		javaJdbc,
 		javaEbean,
-		"com.google.code.gson" % "gson" % "2.2.4"
+		"com.google.code.gson" % "gson" % "2.2.4",
 		"mysql" % "mysql-connector-java" % "5.1.26",
 		"org.bouncycastle" % "bcprov-ext-jdk15on" % "1.49",
 		"org.projectlombok" % "lombok" % "0.12.0",
