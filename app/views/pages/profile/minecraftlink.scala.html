@@ -1,0 +1,14 @@
+@(myForm: Form[form.MinecraftForm])
+@implicitField = @{ helper.FieldConstructor(forms.text.f) }
+<h1>Link Minecraft account</h1>
+@helper.form(action = routes.Link.minecraftSubmit()) {
+<h4>Minecraft.net login</h4>
+<fieldset class="section section-basic">
+	@helper.inputText(myForm("username"), '_label -> "Username / Email", 'autofocus -> "yes")
+	@helper.inputPassword(myForm("password"), '_label -> "Password")
+</fieldset>
+<h4></h4>
+<fieldset class="section">
+	<input type="submit" name="submit" value="Link"/>
+</fieldset>
+}

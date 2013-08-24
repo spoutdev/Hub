@@ -1,0 +1,6 @@
+@(id: String, myForm: Form[_], args: (Symbol,Any)*)
+@implicitField = @{ helper.FieldConstructor(forms.text.f) }
+
+@helper.input(myForm(id), args:_*) { (id, name, value, htmlArgs) =>
+@forms.dateI(id, myForm(id + "_year"), myForm(id + "_month"), myForm(id + "_day"))
+}

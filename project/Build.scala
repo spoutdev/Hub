@@ -13,6 +13,7 @@ object ApplicationBuild extends Build {
 		javaEbean,
 		"com.google.code.gson" % "gson" % "2.2.4",
 		"mysql" % "mysql-connector-java" % "5.1.26",
+		"net.tanesha.recaptcha4j" % "recaptcha4j" % "0.0.7",
 		"org.bouncycastle" % "bcprov-ext-jdk15on" % "1.49",
 		"org.projectlombok" % "lombok" % "0.12.0",
 		"org.xerial" % "sqlite-jdbc" % "3.7.15-M1"

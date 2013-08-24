@@ -1,0 +1,7 @@
+@(id: String, year: play.api.data.Field, month: play.api.data.Field, day: play.api.data.Field, args: (Symbol,Any)*)
+@implicitField = @{ helper.FieldConstructor(forms.none.f) }
+<div id="@id">
+	@helper.inputText(year, 'maxlength -> 4, 'placeholder -> "YYYY", 'onKeyUp -> "keyDownYear(event, this)") /
+	@helper.inputText(month, 'maxlength -> 2, 'placeholder -> "MM", 'onKeyUp -> "keyDownMonth(event, this)") /
+	@helper.inputText(day, 'maxlength -> 2, 'placeholder -> "DD")
+</div>

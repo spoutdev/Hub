@@ -1,0 +1,13 @@
+@(field: play.api.data.Field, keys: Seq[String], options: Seq[(String, String)], args: (Symbol,Any)*)
+@implicitField = @{ helper.FieldConstructor(forms.text.f) }
+
+@helper.input(field, args:_*) { (id, name, value, htmlArgs) =>
+	<select id="@id" name="@name" @toHtmlArgs(htmlArgs)>
+	@args.toMap.get('_default).map { defaultValue =>
+	<option class="blank" value="">@defaultValue</option>
+	}
+	@keys.map { v =>
+	<option value="@v" @(if(value == Some(v)) "selected" else "")>@options.toMap.get(v)</option>
+	}
+	</select>
+}

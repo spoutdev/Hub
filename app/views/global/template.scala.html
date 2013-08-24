@@ -1,0 +1,21 @@
+@(content: Html)
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+	<title>Hub</title>
+	<link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" type="text/css">
+	<link rel="shortcut icon" href="http://cdn.spout.org/img/ico/spout.ico"/>
+</head>
+<body>
+<div class="header">
+	<div>
+		@if(User.getSession() != null) { @global.navigation.render() } else { @global.navigation_logout.render() }
+	</div>
+</div>
+<div class="content">
+	<div>
+		@content
+	</div>
+</div>
+</body>
+</html>

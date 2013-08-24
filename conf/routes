@@ -1,0 +1,41 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Simple Pages
+GET     /                                controllers.Home.index()
+GET     /link                            controllers.Link.index()
+GET     /register                        controllers.Register.index()
+POST    /register                        controllers.Register.submit()
+GET     /auth/login                      controllers.Auth.login()
+GET     /auth/verify                     controllers.Auth.verify()
+GET     /auth/logout                     controllers.Auth.logout()
+
+#Profile
+GET     /profile                         controllers.Profile.userIndex()
+GET     /profile/$uid<[0-9]+>            controllers.Profile.index(uid)
+GET     /profile/$uid<[0-9]+>/edit/email controllers.Profile.editEmail(uid)
+GET     /profile/$uid<[0-9]+>/edit/demo  controllers.Profile.editDemo(uid)
+POST    /profile/$uid<[0-9]+>/edit/demo  controllers.Profile.submitDemo(uid)
+GET     /profile/$uid<[0-9]+>/edit/pass  controllers.Profile.editPassword(uid)
+POST    /profile/$uid<[0-9]+>/edit/pass  controllers.Profile.submitPassword(uid)
+
+#Links
+GET     /link/github                     controllers.Link.github()
+GET     /link/github/remove              controllers.Link.githubRemove()
+GET     /link/facebook                   controllers.Link.facebook()
+GET     /link/facebook/remove            controllers.Link.facebookRemove()
+GET     /link/twitter                    controllers.Link.twitter()
+GET     /link/twitter/remove             controllers.Link.twitterRemove()
+GET     /link/steam                      controllers.Link.steam()
+GET     /link/steam/remove               controllers.Link.steamRemove()
+GET     /link/minecraft                  controllers.Link.minecraft()
+POST    /link/minecraft                  controllers.Link.minecraftSubmit()
+GET     /link/minecraft/remove           controllers.Link.minecraftRemove()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                    controllers.Assets.at(path="/public", file)
+
+#404 page / redirects
+GET     /*uri                            controllers._404.index(uri)
+POST    /*uri                            controllers._404.index(uri)

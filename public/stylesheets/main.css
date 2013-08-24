@@ -1,0 +1,280 @@
+body {
+	background: #f5f5f5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f5f5f5 0%, #d7d7d7 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#d7d7d7)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f5f5f5 0%,#d7d7d7 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f5f5f5 0%,#d7d7d7 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f5f5f5 0%,#d7d7d7 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f5f5f5 0%,#d7d7d7 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#d7d7d7',GradientType=0 ); /* IE6-9 */
+	color: #FFF;
+	font-family: Arial;
+	font-size: 14px;
+	margin: 0;
+}
+a {
+	color: #FFF;
+}
+a:hover {
+	color: #d7d7d7;
+}
+.header {
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #e1e1e1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e1e1e1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#e1e1e1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#e1e1e1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#e1e1e1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#e1e1e1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */
+}
+.header > div {
+	height: 40px;
+	width: 700px;
+	margin: auto;
+	line-height: 40px;
+}
+.header a, .header > div div {
+	float: right;
+	padding: 0 10px;
+	color: #0C467A;
+	font-weight: bold;
+	text-decoration: none;
+}
+.header a:hover {
+	color: #1366AF;
+}
+.header > div .navigation-left {
+	float: left;
+	margin: 0 15px 0 0;
+}
+.title div {
+	background: url('http://cdn.spout.org/img/logo/spout_new.png') no-repeat;
+	width: 200px;
+	height: 95px;
+	margin-top: -4px;
+	position: absolute;
+}
+.content {
+	text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+	background: #06233F; /* Old browsers */
+	background: -moz-linear-gradient(45deg,  #06233F 0%, #105EA2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#06233F), color-stop(100%,#105EA2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg,  #06233F 0%,#105EA2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg,  #06233F 0%,#105EA2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg,  #06233F 0%,#105EA2 100%); /* IE10+ */
+	background: linear-gradient(45deg,  #06233F 0%,#105EA2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#06233F', endColorstr='#105EA2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	-webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+	-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+       box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+
+	margin: 0 auto 60px;
+	padding: 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	min-height: 400px;
+}
+.content > div {
+	width: 700px;
+	margin: auto;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+.links li {
+	padding: 0 10px 0 50px;
+	line-height: 40px;
+	border-bottom: 1px solid rgba(178, 178, 178, 0.3);
+	background-position: 4px 4px;
+	background-repeat: no-repeat;
+}
+.links li > div {
+	overflow: hidden;
+	padding: 0 100px 10px;
+	line-height: normal;
+}
+.links li > div img {
+	float: left;
+	margin-right: 10px;
+}
+.links li > div h1, .links li > div h2 {
+	font-weight: normal;
+	margin: 10px 0;
+}
+.links li > div h1 {
+	font-size: 24px;
+}
+.links li > div h2 {
+	font-size: 20px;
+}
+.links li a {
+	color: #FFF;
+}
+.links li a:last-child {
+	float: right;
+}
+.links li a:hover {
+	color: #BBB;
+}
+.github {
+	background-image: url('http://cdn.spout.org/img/icon/github_32x32.png');
+}
+.facebook {
+	background-image: url('http://cdn.spout.org/img/icon/facebook_32x32.png');
+}
+.twitter {
+	background-image: url('http://cdn.spout.org/img/icon/twitter_32x32.png');
+}
+.minecraft {
+	background-image: url('http://cdn.spout.org/img/icon/grass_32x32.png');
+}
+.steam {
+	background-image: url('http://cdn.spout.org/img/icon/steam_32x32.png');
+}
+h4 {
+	border-bottom: 1px solid rgba(178, 178, 178, 0.3);
+	padding: 3px;
+}
+fieldset {
+	border: 0;
+}
+.section .tag {
+	width: 200px;
+	text-align: right;
+	float: left;
+	font-size: 16px;
+	padding: 7px;
+	margin-bottom: 18px;
+}
+.section input[type=text], .section input[type=password], .section select {
+	display: block;
+	width: 400px;
+	padding: 4px;
+}
+.section-captcha {
+height: 129px;
+}
+.section-basic .error + input[type=text] {
+	padding-right: 29px;
+}
+.section input[type=text], .section input[type=password], .section input[type=submit], .section select {
+	font-size: 16px;
+}
+#dob, #gender, .section > input {
+	margin: 0 0 20px 220px;
+}
+#dob input[type=text]:first-child {
+	width: 56px;
+	margin-left: 0;
+}
+#dob input[type=text] {
+	width: 40px;
+	display: inline-block;
+	margin: 0 5px;
+	text-align: center;
+}
+.section input[type=submit] {
+	width: auto;
+	padding: 5px 20px;
+	margin: 0 0 20px 20px;
+	float: right;
+}
+#recaptcha_widget_div {
+	margin-left: 230px;
+}
+.error {
+	text-align: center;
+	text-shadow: 0 0 1px rgba(255,255,255,.4), 0 0 30px rgba(255,255,255,.075);
+	color: #EA4D31;
+	padding: 4px;
+}
+.erroricon {
+	background: url('http://cdn.spout.org/img/icon/exclamation.png') no-repeat;
+	width: 16px;
+	height: 16px;
+	margin-left: 4px;
+	display: inline-block;
+	vertical-align: text-top;
+}
+.section .error {
+	background: url('http://cdn.spout.org/img/icon/exclamation.png') center center no-repeat;
+	padding: 0;
+	text-align: left;
+	width: 29px;
+	height: 29px;
+	float: right;
+	position: relative;
+	top: 1px;
+}
+.section .error > div {
+	margin: -10px 0 0 40px;
+	width: 150px;
+}
+.section .error > div div {
+	height: 48px;
+	vertical-align: middle;
+	display: table-cell;
+}
+.section-basic .error {
+	left: -56px;
+}
+.section-captcha .error {
+	left: -92px;
+}
+.section-dob .error {
+	left: -230px;
+}
+.user {
+	overflow: hidden;
+	margin-top: 30px;
+}
+.user ul li span:first-child {
+	width: 90px;
+	vertical-align: top
+}
+.user ul li span {
+	display: inline-block;
+}
+.user ul li {
+	margin-top: 3px;
+}
+.user ul {
+	margin-left: 270px;
+}
+.user .edit {
+	margin: 5px 0 15px;
+	border-bottom: 1px solid rgba(178, 178, 178, 0.3);
+}
+.user .edit a {
+	float: right;
+	position: relative;
+	top: -21px;
+}
+.rev {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	display: inline;
+}
+.home {
+	margin-top: 10px;
+	overflow: hidden;
+}
+.home img {
+	float: left;
+}
+.home ul {
+	margin-left: 470px;
+}
+.home ul li {
+	padding-left: 27px;
+	margin: 2px;
+	margin-left: 10px;
+	background: url('http://get.spout.org/assets/img/glyphicons-arrow.png') left center no-repeat;
+}
+.home ul li a {
+	padding: 8px;
+	display: block;
+	text-decoration: none;
+}

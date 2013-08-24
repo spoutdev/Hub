@@ -1,0 +1,38 @@
+@(user: User, profile: User, avatar: String)
+<div class="user">
+	@Html(avatar)
+	<h1>@profile.getName()</h1>
+	<ul>
+		<li>
+			<span>Email:</span>
+			<span><div class="rev">@profile.getReverseEmail()</div></span>
+		</li>
+		<li class="edit"><a href="/profile/@profile.getId()/edit/email">Edit</a></li>
+		<li>
+			<span>Password:</span>
+			<span>&#149;&#149;&#149;&#149;&#149;&#149;&#149;&#149;&#149;&#149;</span>
+		</li>
+		<li class="edit"><a href="/profile/@profile.getId()/edit/pass">Edit</a></li>
+		<li>
+			<span>Name:</span>
+			<span>@profile.getName()</span>
+		</li>
+		<li>
+			<span>Gender:</span>
+			<span>@profile.getGenderText()</span>
+		</li>
+		<li>
+			<span>Date of Birth:</span>
+			<span>@user.localTime(profile.getDOB(), "yyyy-MM-dd")</span>
+		</li>
+		<li>
+			<span>Timezone:</span>
+			<span>@Html(profile.getTimeZoneString().replace(", ", ",<br/>"))</span>
+		</li>
+		<li class="edit"><a href="/profile/@profile.getId()/edit/demo">Edit</a></li>
+		<li>
+			<span>Last Seen:</span>
+			<span>@user.localTime(profile.getLastSeen())</span>
+		</li>
+	</ul>
+</div>
