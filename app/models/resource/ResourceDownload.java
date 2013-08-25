@@ -11,25 +11,18 @@ import play.db.ebean.Model;
 
 @Entity
 public class ResourceDownload extends Model {
-
-    @Id
-    public Long id;
-
-    @Constraints.Required
-    public String name;
-
-    @Constraints.Required
-    @Column(length = 2000)
-    public String description;
-
-    @Column(length = 2000)
-    public String canevats;
-
-    public ResourceDownloadStatus status;
-
-    @Constraints.Required
-    public String filename;
-
-    @ManyToOne
-    public Resource resource;
+	@Id
+	public Long id;
+	@Constraints.Required
+	public String name;
+	@Constraints.Required
+	@Column (length = 2000)
+	public String description;
+	@Column (length = 2000)
+	public String canevats;
+	public ResourceDownloadStatus status;
+	@Constraints.Required
+	public String filename;
+	@ManyToOne
+	public Resource resource;
 }

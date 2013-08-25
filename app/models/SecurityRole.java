@@ -15,13 +15,14 @@
  */
 package models;
 
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.List;
 
 import be.objectify.deadbolt.core.models.Role;
+
 import play.db.ebean.Model;
 
 /**
@@ -29,20 +30,19 @@ import play.db.ebean.Model;
  */
 @Entity
 public class SecurityRole extends Model implements Role {
-    @Id
-    public Integer id;
-    public String roleName;
-    @OneToMany(cascade = CascadeType.ALL)
-    public List<GroupACL> permissions;
-    public static final Model.Finder<Long, SecurityRole> find = new Model.Finder<Long, SecurityRole>(
-            Long.class, SecurityRole.class);
+	@Id
+	public Integer id;
+	public String roleName;
+	@OneToMany (cascade = CascadeType.ALL)
+	public List<GroupACL> permissions;
+	public static final Model.Finder<Long, SecurityRole> find = new Model.Finder<Long, SecurityRole>(Long.class, SecurityRole.class);
 
-    @Override
-    public String getName() {
-        return roleName;
-    }
+	@Override
+	public String getName() {
+		return roleName;
+	}
 
-    public static SecurityRole findByRoleName(String roleName) {
-        return find.where().eq("roleName", roleName).findUnique();
-    }
+	public static SecurityRole findByRoleName(String roleName) {
+		return find.where().eq("roleName", roleName).findUnique();
+	}
 }

@@ -11,18 +11,14 @@ import play.db.ebean.Model;
 
 @Entity
 public class ResourceACL extends Model {
-
-    @Id
-    public Long id;
-
-    @Constraints.Required
-    @ManyToOne
-    public User user;
-
-    @Constraints.Required
-    @ManyToOne
-    public Resource Resource;
-
-    @Constraints.Required
-    public ResourceRole resourceRole;
+	@Id
+	public Long id;
+	@Constraints.Required
+	@ManyToOne
+	public User user;
+	@Constraints.Required
+	@ManyToOne
+	public Resource Resource;
+	@Constraints.Required
+	public ResourceRole resourceRole;
 }
