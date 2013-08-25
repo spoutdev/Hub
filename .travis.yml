@@ -1,22 +1,22 @@
-# Source language and JDK version to use
+# Source language and JDK version to use.
 language: java
 jdk: oraclejdk7
 
 before_script:
-  # Download the latest Play Framework package
+  # Download the latest Play Framework package.
   - wget http://downloads.typesafe.com/play/${PLAY_VERSION}/play-${PLAY_VERSION}.zip
-  # Unpack the Play Framework package
+  # Unpack the Play Framework package.
   - unzip -q play-${PLAY_VERSION}.zip 
-# Run tests on module using Play Framework
+# Run tests on module using Play Framework.
 script: play-${PLAY_VERSION}/play test
 
 notifications:
   # Disable build status email notifications, until the issue with forks is fixed.
   email: false
   webhooks:
-    # Send build information and status to Notifico
+    # Send build information and status to Notifico.
     - http://n.tkte.ch/h/1250/ZczHuKSDHMUOg5idf_CZBKMJ
 
 env:
-  # Version of Play Framework to use
+  # Version of Play Framework to use.
   - PLAY_VERSION=2.1.3
