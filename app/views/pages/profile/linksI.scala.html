@@ -1,8 +1,0 @@
-@(exLink: link.Link)
-<li class="@exLink.getHumanReadableToken().toLowerCase()">@exLink.getHumanReadableToken()
-	@if(exLink.exists()) {
-	- @if(exLink.getHref() != null) { <a href="@exLink.getHref()">@exLink.getName()</a> } else { @exLink.getName() }<a href="/link/@exLink.getHumanReadableToken().toLowerCase()/remove">Unlink</a>
-	} else {
-	<a href="/link/@exLink.getHumanReadableToken().toLowerCase()">Link</a>
-	}
-</li>

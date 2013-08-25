@@ -2,40 +2,46 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Simple Pages
-GET     /                                controllers.Home.index()
-GET     /link                            controllers.Link.index()
-GET     /register                        controllers.Register.index()
-POST    /register                        controllers.Register.submit()
-GET     /auth/login                      controllers.Auth.login()
-GET     /auth/verify                     controllers.Auth.verify()
-GET     /auth/logout                     controllers.Auth.logout()
+# Home page
+GET     /                           controllers.Application.index
+GET     /restricted                 controllers.Application.restricted
+GET     /assets/javascript/routes.js    controllers.Application.jsRoutes
 
-#Profile
-GET     /profile                         controllers.Profile.userIndex()
-GET     /profile/$uid<[0-9]+>            controllers.Profile.index(uid)
-GET     /profile/$uid<[0-9]+>/edit/email controllers.Profile.editEmail(uid)
-GET     /profile/$uid<[0-9]+>/edit/demo  controllers.Profile.editDemo(uid)
-POST    /profile/$uid<[0-9]+>/edit/demo  controllers.Profile.submitDemo(uid)
-GET     /profile/$uid<[0-9]+>/edit/pass  controllers.Profile.editPassword(uid)
-POST    /profile/$uid<[0-9]+>/edit/pass  controllers.Profile.submitPassword(uid)
+GET     /profile                    controllers.Application.profile
 
-#Links
-GET     /link/github                     controllers.Link.github()
-GET     /link/github/remove              controllers.Link.githubRemove()
-GET     /link/facebook                   controllers.Link.facebook()
-GET     /link/facebook/remove            controllers.Link.facebookRemove()
-GET     /link/twitter                    controllers.Link.twitter()
-GET     /link/twitter/remove             controllers.Link.twitterRemove()
-GET     /link/steam                      controllers.Link.steam()
-GET     /link/steam/remove               controllers.Link.steamRemove()
-GET     /link/minecraft                  controllers.Link.minecraft()
-POST    /link/minecraft                  controllers.Link.minecraftSubmit()
-GET     /link/minecraft/remove           controllers.Link.minecraftRemove()
+GET     /login                      controllers.Application.login
+POST    /login                      controllers.Application.doLogin
+
+GET     /logout                     com.feth.play.module.pa.controllers.Authenticate.logout
+GET     /authenticate/:provider     com.feth.play.module.pa.controllers.Authenticate.authenticate(provider: String)
+
+GET     /signup                     controllers.Application.signup
+POST    /signup                     controllers.Application.doSignup
+
+GET     /accounts/unverified        controllers.Signup.unverified
+GET     /authenticate/:provider/denied     controllers.Signup.oAuthDenied(provider: String)
+
+GET     /accounts/verify/:token     controllers.Signup.verify(token: String)
+GET     /accounts/exists            controllers.Signup.exists
+
+GET     /accounts/password/reset/:token     controllers.Signup.resetPassword(token: String)
+POST    /accounts/password/reset            controllers.Signup.doResetPassword
+
+GET    /accounts/password/change    controllers.Account.changePassword
+POST   /accounts/password/change    controllers.Account.doChangePassword
+
+GET     /accounts/verify            controllers.Account.verifyEmail
+
+GET     /accounts/add               controllers.Account.link
+
+GET     /accounts/link              controllers.Account.askLink
+POST    /accounts/link              controllers.Account.doLink
+
+GET     /accounts/merge             controllers.Account.askMerge
+POST    /accounts/merge             controllers.Account.doMerge
+
+GET     /login/password/forgot     controllers.Signup.forgotPassword(email: String ?= "")
+POST    /login/password/forgot     controllers.Signup.doForgotPassword
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file                    controllers.Assets.at(path="/public", file)
-
-#404 page / redirects
-GET     /*uri                            controllers._404.index(uri)
-POST    /*uri                            controllers._404.index(uri)
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
