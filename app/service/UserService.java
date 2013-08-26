@@ -4,14 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import models.LocalToken;
-import models.SecurityRole;
-import models.User;
 import org.joda.time.DateTime;
-import play.Application;
-import play.Logger;
-import scala.Option;
-import scala.Some;
+
 import securesocial.core.AuthenticationMethod;
 import securesocial.core.Identity;
 import securesocial.core.IdentityId;
@@ -21,6 +15,14 @@ import securesocial.core.PasswordInfo;
 import securesocial.core.SocialUser;
 import securesocial.core.java.BaseUserService;
 import securesocial.core.java.Token;
+
+import models.LocalToken;
+import models.SecurityRole;
+import models.User;
+import play.Application;
+import play.Logger;
+import scala.Option;
+import scala.Some;
 
 public class UserService extends BaseUserService {
 	public UserService(Application application) {

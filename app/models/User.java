@@ -9,6 +9,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import securesocial.core.AuthenticationMethod;
+
 import models.resource.ResourceACL;
 import models.resource.ResourceComment;
 import models.resource.ResourcePage;
@@ -16,10 +18,9 @@ import models.resource.ResourceReview;
 import models.resource.ResourceTicket;
 import models.resource.ResourceWatcher;
 import play.db.ebean.Model;
-import securesocial.core.AuthenticationMethod;
 
 /**
- * Initial version based on work by Steve Chaloner (steve@objectify.be) for Deadbolt2
+ * Initial version based on work by Steve Chaloner (steve@objectify.be) for Deadbolt2.
  */
 @Entity
 @Table (name = "users")
@@ -32,10 +33,10 @@ public class User extends Model {
 	public String lastName;
 	public String email;
 	public String password;
-	//OAuth1 information
+	// OAuth1 information
 	public String oauth1Token;
 	public String oauth1Secret;
-	//OAuth2 information
+	// OAuth2 information
 	public String oauth2accessToken;
 	public String oauth2tokenType;
 	public Integer oauth2expiresIn;

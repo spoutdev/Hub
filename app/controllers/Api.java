@@ -1,10 +1,11 @@
 package controllers;
 
+import securesocial.core.Identity;
+import securesocial.core.Registry;
+
 import play.Play;
 import play.mvc.Controller;
 import play.mvc.Result;
-import securesocial.core.Identity;
-import securesocial.core.Registry;
 import service.UserService;
 
 public class Api extends Controller {

@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.QueryIterator;
 import com.avaje.ebean.annotation.EnumValue;
+
 import play.data.format.Formats;
 import play.db.ebean.Model;
 
@@ -23,7 +24,7 @@ public class TokenAction extends Model {
 
 	private static final long serialVersionUID = 1L;
 	/**
-	 * Verification time frame (until the user clicks on the link in the email) in seconds Defaults to one week
+	 * Verification time frame (until the user clicks on the link in the email) in seconds Defaults to one week.
 	 */
 	private final static long VERIFICATION_TIME = 7 * 24 * 3600;
 	@Id

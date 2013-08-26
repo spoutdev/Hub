@@ -9,7 +9,7 @@ import securesocial.core.Identity;
 import securesocial.core.java.Authorization;
 
 /**
- * A sample authorization implementation that lets you filter requests based on the provider that authenticated the user
+ * A sample authorization implementation that lets you filter requests based on the provider that authenticated the user.
  */
 public class GeneralACLCheck implements Authorization {
 	public boolean isAuthorized(Identity identity, String params[]) {
