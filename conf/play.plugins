@@ -1,7 +1,9 @@
 1500:com.typesafe.plugin.CommonsMailerPlugin
-10000:be.objectify.deadbolt.java.DeadboltPlugin
-10005:service.MyUserServicePlugin
-10020:com.feth.play.module.pa.providers.oauth2.facebook.FacebookAuthProvider
-10040:providers.MyUsernamePasswordAuthProvider
-10050:com.feth.play.module.pa.providers.openid.OpenIdAuthProvider
-10060:com.feth.play.module.pa.providers.oauth1.twitter.TwitterAuthProvider
+9994:securesocial.core.DefaultAuthenticatorStore
+9995:securesocial.core.DefaultIdGenerator
+9996:securesocial.core.providers.utils.DefaultPasswordValidator
+9997:securesocial.controllers.DefaultTemplatesPlugin
+9998:service.UserService
+9999:securesocial.core.providers.utils.BCryptPasswordHasher
+10000:securesocial.core.providers.TwitterProvider
+10004:securesocial.core.providers.UsernamePasswordProvider
