@@ -21,15 +21,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import be.objectify.deadbolt.core.models.Role;
-
 import play.db.ebean.Model;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
-public class SecurityRole extends Model implements Role {
+public class SecurityRole extends Model {
 	@Id
 	public Integer id;
 	public String roleName;
@@ -37,7 +35,6 @@ public class SecurityRole extends Model implements Role {
 	public List<GroupACL> permissions;
 	public static final Model.Finder<Long, SecurityRole> find = new Model.Finder<Long, SecurityRole>(Long.class, SecurityRole.class);
 
-	@Override
 	public String getName() {
 		return roleName;
 	}

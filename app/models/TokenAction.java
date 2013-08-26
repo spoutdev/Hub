@@ -9,7 +9,6 @@ import javax.persistence.ManyToOne;
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.QueryIterator;
 import com.avaje.ebean.annotation.EnumValue;
-
 import play.data.format.Formats;
 import play.db.ebean.Model;
 
@@ -45,7 +44,7 @@ public class TokenAction extends Model {
 	}
 
 	public static void deleteByUser(final User u, final Type type) {
-		QueryIterator<TokenAction> iterator = find.where().eq("targetUser.id", u.id).eq("type", type).findIterate();
+		QueryIterator<TokenAction> iterator = find.where().eq("targetUser.id", u.uuid).eq("type", type).findIterate();
 		Ebean.delete(iterator);
 		iterator.close();
 	}
