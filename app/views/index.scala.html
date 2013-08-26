@@ -1,34 +1,48 @@
-@main(Messages("playauthenticate.index.title")) {
-<!-- Main hero unit for a primary marketing message or call to action -->
-<div class="hero-unit">
-	<h1>@Messages("playauthenticate.index.intro")</h1>
+@(user: securesocial.core.Identity)
+@import securesocial.core.IdentityProvider
+@import Http.Context.Implicit
 
-	<p>@Messages("playauthenticate.index.intro_2") <br/>@Messages("playauthenticate.index.intro_3")</p>
+@main("SecureSocial - Sample Protected Page") {
+<div class="page-header">
+    <h2><img src="@user.avatarUrl" alt="@user.fullName" width="40px" height="40px"/> Welcome @user.firstName</h2>
 </div>
 
-<!-- Example row of columns -->
-<div class="row">
-	<div class="span4">
-		<h2>@Messages("playauthenticate.index.heading")</h2>
+<div class="clearfix">
+    <h2>User Details</h2>
 
-		<p>Cupcake ipsum dolor sit amet. Pastry pie powder biscuit bear claw. Jelly-o chocolate bar sweet roll sugar plum chocolate. Biscuit brownie chupa chups macaroon ice cream halvah sugar plum
-			oat cake ice cream.</p>
+    <ul>
+        <li>User Id: @user.identityId.userId</li>
+        <li>Logged in from: @user.identityId.providerId</li>
+        <li>Fist name: @user.firstName</li>
+        <li>Last name: @user.lastName</li>
+        <li>Full name: @user.fullName</li>
+        <li>Email: @user.email.map { email => @email }.getOrElse("Not Available")</li>
+        <li>Authentication method: @user.authMethod</li>
+    </ul>
 
-		<p><a class="btn" href="#">@Messages("playauthenticate.index.details") &raquo;</a></p>
-	</div>
-	<div class="span4">
-		<h2>Heading</h2>
+    @user.oAuth1Info.map { info =>
+    <h2>OAuth1 Info</h2>
 
-		<p>Applicake macaroon caramels gummi bears pastry. Cake liquorice carrot cake chocolate lollipop dessert. Halvah fruitcake marshmallow pie gummi bears pie marzipan.</p>
+    <ul>
+        <li>Token: @info.token</li>
+        <li>Secret: @info.secret</li>
+    </ul>
+    }
 
-		<p><a class="btn" href="#">@Messages("playauthenticate.index.details") &raquo;</a></p>
-	</div>
-	<div class="span4">
-		<h2>Heading</h2>
+    @user.oAuth2Info.map { info =>
+    <h2>OAuth2 Info</h2>
 
-		<p>Wafer halvah jujubes lollipop liquorice jelly-o pastry. Pie halvah toffee. Candy canes donut sugar plum. Chocolate cake powder tart liquorice cotton candy pudding sweet.</p>
-
-		<p><a class="btn" href="#">@Messages("playauthenticate.index.details") &raquo;</a></p>
-	</div>
+    <ul>
+        <li>Access Token: @info.accessToken</li>
+        @info.tokenType.map { t => <li>Token Type: @t</li> }
+        @info.expiresIn.map { exp => <li>Expires in: @exp seconds</li>}
+        @info.refreshToken.map { rt => <li>Refresh Token: @rt</li>}
+    </ul>
+    }
+    <hr>
+    @user.passwordInfo.map { info =>
+	<a class="btn" href="@securesocial.core.providers.utils.RoutesHelper.changePasswordPage.absoluteURL(Implicit.request(), IdentityProvider.sslEnabled)">Change Password</a>
+    }
+    <a class="btn" href="@securesocial.controllers.routes.LoginPage.logout()">Logout</a>
 </div>
 }
