@@ -1,0 +1,95 @@
+@(currentPage: com.avaje.ebean.Page[models.resource.Resource], currentSortBy: String, currentOrder: String, currentFilter: String)
+
+@****************************************
+* Helper generating navigation links    *
+****************************************@
+@link(newPage:Int, newSortBy:String) = @{
+    var sortBy = currentSortBy
+    var order = currentOrder
+
+    if(newSortBy != null) {
+    sortBy = newSortBy
+    if(currentSortBy == newSortBy) {
+    if(currentOrder == "asc") {
+    order = "desc"
+    } else {
+    order = "asc"
+    }
+    } else {
+    order = "asc"
+    }
+    }
+
+    // Generate the link
+    routes.ResourceController.list(newPage, sortBy, order, currentFilter)
+}
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(key:String, title:String) = {
+    <th class="@key.replace(".","_") header @if(currentSortBy == key) @{if(currentOrder == "asc") "headerSortDown" else "headerSortUp"}">
+    <a href="@link(0, key)">@title</a>
+    </th>
+}
+
+@if(currentPage.getTotalRowCount == 0) {
+
+<div class="well">
+    <em>Nothing to display</em>
+</div>
+
+} else {
+
+<table class="zebra-striped">
+    <thead>
+    <tr>
+        @header("name", "Name")
+        @header("rating", "Rating")
+        @header("resourceACLs", "Authors")
+        @header("resourceCategoryList", "Categories")
+    </tr>
+    </thead>
+    <tbody>
+
+    @for(resource <- currentPage.getList) {
+    <tr>
+        <td><a href="@routes.ResourceController.show(resource.id)">@resource.name</a></td>
+        <td>@resource.rating</td>
+        <td>for (author <- @resource.getAuthors) {
+            author.firstName<br />
+        }</td>
+        <td>for (category <- @resource.resourceCategoryList) {
+            category.name
+        }</td>
+    </tr>
+    }
+
+    </tbody>
+</table>
+
+<div id="pagination" class="pagination">
+    <ul>
+        @if(currentPage.hasPrev) {
+        <li class="prev">
+            <a href="@link(currentPage.getPageIndex - 1, null)">&larr; Previous</a>
+        </li>
+        } else {
+        <li class="prev disabled">
+            <a>&larr; Previous</a>
+        </li>
+        }
+        <li class="current">
+            <a>Displaying @currentPage.getDisplayXtoYofZ(" to "," of ")</a>
+        </li>
+        @if(currentPage.hasNext) {
+        <li class="next">
+            <a href="@link(currentPage.getPageIndex + 1, null)">Next &rarr;</a>
+        </li>
+        } else {
+        <li class="next disabled">
+            <a>Next &rarr;</a>
+        </li>
+        }
+    </ul>
+</div>
+}
