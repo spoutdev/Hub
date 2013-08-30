@@ -41,8 +41,8 @@
 	}
 	<hr>
 	@user.passwordInfo.map { info =>
-	<a class="btn" href="@securesocial.core.providers.utils.RoutesHelper.changePasswordPage.absoluteURL(Implicit.request(), IdentityProvider.sslEnabled)">Change Password</a>
+	<a class="btn btn-default" href="@securesocial.core.providers.utils.RoutesHelper.changePasswordPage.absoluteURL(Implicit.request(), IdentityProvider.sslEnabled)">Change Password</a>
 	}
-	<a class="btn" href="@securesocial.controllers.routes.LoginPage.logout()">Logout</a>
+	<a class="btn btn-default" href="@securesocial.controllers.routes.LoginPage.logout()">Logout</a>
 </div>
 }
