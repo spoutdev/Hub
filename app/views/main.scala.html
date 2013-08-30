@@ -4,22 +4,54 @@
 <html>
 	<head>
 		<title>@title</title>
-		<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-		<link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
-		<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+		<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")" />
+		<link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" />
+		<link rel="stylesheet" media="screen" href="/assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic">
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
 	</head>
-	<body>
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<span class="brand">Hub: Dev Edition</span>
+	<body id="index" class="enable-animations">
+		<div id="background-gradient"></div>
+		<div class="container content-container">
+			<div class="sp-header">
+				<div class="row-fluid">
+					<div class="span2 logo bounceIn">
+						<a href="https://forums.spout.org/"><h1 class="transitioned">Spout</h1></a>
+					</div>
+					<div class="span10 menu">
+						<div class="sp-header-top row">
+							<ul class="unstyled">
+								<li class="active">
+									<a href="https://hub.spout.org/">Hub</a>
+								</li>
+								<li>
+									<a href="https://hub.spout.org/forums">Discussions</a>
+								</li>
+								<li>
+									<a href="https://hub.spout.org/articles">Articles</a>
+								</li>
+								<li>
+									<a href="https://hub.spout.org/blog">Blog</a>
+								</li>
+								<li>
+									<a href="https://hub.spout.org/downloads">Downloads</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="sp-header-bot sp-shadowbox row">
+					<div>
+						<ul class="unstyled hidden-phone">
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-
-		<div class="container" style="padding-top:30px">
-			@content
+			<div id="primary" class="site-content">
+				<div id="content" role="main">
+					@content
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
