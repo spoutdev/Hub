@@ -21,4 +21,5 @@ public class ResourceACL extends Model {
 	public Resource Resource;
 	@Constraints.Required
 	public ResourceRole resourceRole;
+	public static final Finder<Long, ResourceACL> find = new Finder<Long, ResourceACL>(Long.class, ResourceACL.class);
 }

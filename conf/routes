@@ -5,7 +5,7 @@
 # Home page
 GET     /                           controllers.Application.index
 GET     /acltest                    controllers.Application.onlyTwitter
-GET     /api/v1/login               controllers.Api.login(email: String, password: String)
+
 # Login page
 GET     /login                      securesocial.controllers.LoginPage.login
 GET     /logout                     securesocial.controllers.LoginPage.logout
@@ -29,3 +29,10 @@ GET     /not-authorized             securesocial.controllers.ProviderController.
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# API
+POST    /api/v1/login               controllers.APIAuthController.authenticateByPost(provider)
+
+# Resource
+GET     /resource                   controllers.ResourceController.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+GET     /resource/show              controllers.ResourceController.show(id: Long)
