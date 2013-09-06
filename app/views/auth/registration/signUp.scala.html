@@ -6,57 +6,60 @@
 @implicitFieldConstructor = @{ FieldConstructor(views.html.auth.inputFieldConstructor.f) }
 
 @main( Messages("securesocial.signup.title") ) {
-	<div class="page-header">
-		<h1>@Messages("securesocial.signup.title")</h1>
-	</div>
-
-	@request.flash.get("error").map { msg =>
-		<div class="alert alert-danger">
-			@msg
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h1 class="panel-title">@Messages("securesocial.signup.title")</h1>
 		</div>
-	}
-
-	<form action="@securesocial.core.providers.utils.RoutesHelper.handleSignUp(token).absoluteURL(IdentityProvider.sslEnabled)(request)" class="form-horizontal" autocomplete= "off" method="POST" role="form">
-		<fieldset>
-			@if( UsernamePasswordProvider.withUserNameSupport ) {
-				@helper.inputText(
-					signUpForm("userName"),
-					'_label -> Messages("securesocial.signup.username"),
-					'class -> "form-control"
-				)
+		<div class="panel-body">
+			@request.flash.get("error").map { msg =>
+				<div class="alert alert-danger">
+					@msg
+				</div>
 			}
 
-			@helper.inputText(
-				signUpForm("firstName"),
-				'_label -> Messages("securesocial.signup.firstName"),
-				'class -> "form-control"
-			)
+			<form action="@securesocial.core.providers.utils.RoutesHelper.handleSignUp(token).absoluteURL(IdentityProvider.sslEnabled)(request)" class="form-horizontal" autocomplete= "off" method="POST" role="form">
+				<fieldset>
+					@if( UsernamePasswordProvider.withUserNameSupport ) {
+						@helper.inputText(
+							signUpForm("userName"),
+							'_label -> Messages("securesocial.signup.username"),
+							'class -> "form-control"
+						)
+					}
 
-			@helper.inputText(
-				signUpForm("lastName"),
-				'_label -> Messages("securesocial.signup.lastName"),
-				'class -> "form-control"
-			)
+					@helper.inputText(
+						signUpForm("firstName"),
+						'_label -> Messages("securesocial.signup.firstName"),
+						'class -> "form-control"
+					)
 
-			@helper.inputPassword(
-				signUpForm("password.password1"),
-				'_label -> Messages("securesocial.signup.password1"),
-				'class -> "form-control"
-			)
+					@helper.inputText(
+						signUpForm("lastName"),
+						'_label -> Messages("securesocial.signup.lastName"),
+						'class -> "form-control"
+					)
 
-			@helper.inputPassword(
-				signUpForm("password.password2"),
-				'_label -> Messages("securesocial.signup.password2"),
-				'_error -> signUpForm.error("password"),
-				'class -> "form-control"
-			)
+					@helper.inputPassword(
+						signUpForm("password.password1"),
+						'_label -> Messages("securesocial.signup.password1"),
+						'class -> "form-control"
+					)
 
-			<div class="form-group">
-				<div class="col-lg-offset-2 col-lg-10">
-					<button type="submit" class="btn btn-primary">@Messages("securesocial.signup.createAccount")</button>
-					<a class="btn btn-default" href="@securesocial.core.providers.utils.RoutesHelper.login()">@Messages("securesocial.signup.cancel")</a>
-				</div>
-			</div>
-		</fieldset>
-	</form>
+					@helper.inputPassword(
+						signUpForm("password.password2"),
+						'_label -> Messages("securesocial.signup.password2"),
+						'_error -> signUpForm.error("password"),
+						'class -> "form-control"
+					)
+
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-10">
+							<button type="submit" class="btn btn-primary">@Messages("securesocial.signup.createAccount")</button>
+							<a class="btn btn-default" href="@securesocial.core.providers.utils.RoutesHelper.login()">@Messages("securesocial.signup.cancel")</a>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
 }
