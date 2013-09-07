@@ -10,27 +10,157 @@
 	min-height: 45px;
 	z-index: 0;
 }
-::-webkit-input-placeholder {
+.sp-header-bot ::-webkit-input-placeholder {
    color: #fafbfd;
 }
-::-moz-placeholder {
+.sp-header-bot ::-moz-placeholder {
 	color: #fafbfd;
 }
-:-moz-placeholder {
+.sp-header-bot ::moz-placeholder {
 	color: #fafbfd;
 }
-:-ms-placeholder {
+.sp-header-bot :-moz-placeholder {
 	color: #fafbfd;
+}
+.sp-header-bot :-ms-placeholder {
+	color: #fafbfd;
+}
+input.form-control, textarea.form-control {
+	border: 1px solid #b9c4cb;
+	background-color: #ecf0f6;
+	outline: none;
+	font-size: 11px;
+	color: #474747;
+	font-weight: bold;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+input.form-control input, textarea.form-control textarea {
+	padding: 15px 17px;
+}
+input:focus, textarea:focus {
+	border-color: #b9c4cb;
+}
+.form-group.has-error input.form-control input, .form-group.has-success input.form-control input, .form-group.has-error textarea.form-control textarea, .form-group.has-success textarea.form-control textarea {
+	padding: 15px 30px 15px 17px;
+}
+.form-group.has-error input, .form-group.has-error textarea {
+	border-color: #eeaca9;
+	background: #e8ebf1 url("../icons/error-15x17.png") no-repeat 97% 8px;
+}
+.form-group.has-success input, .form-group.has-success textarea {
+	background: #e8ebf1 url("../icons/success-14x12.png") no-repeat 97% 13px;
+}
+textarea {
+	min-height: 200px;
+}
+.btn {
+	border: 1px solid;
+	font-size: 11px;
+	font-weight: bold;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.btn-default {
+	color: #474747;
+	background: #fff;
+	background: -moz-linear-gradient(top, #fff 0%, #eceff2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#eceff2));
+	background: -webkit-linear-gradient(top, #fff 0%,#eceff2 100%);
+	background: -o-linear-gradient(top, #fff 0%,#eceff2 100%);
+	background: -ms-linear-gradient(top, #fff 0%,#eceff2 100%);
+	background: linear-gradient(to bottom, #fff 0%,#eceff2 100%);
+	border-color: #b8bfc2;
+}
+.btn-default:hover {
+	color: #368eb2;
+}
+.btn-default:active {
+	background: #fff;
+	color: #368eb2;
+	background: -moz-radial-gradient(center, ellipse cover, #fff 40%, #949494 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(40%,#fff), color-stop(100%,#949494));
+	background: -webkit-radial-gradient(center, ellipse cover, #fff 40%,#949494 100%);
+	background: -o-radial-gradient(center, ellipse cover, #fff 40%,#949494 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #fff 40%,#949494 100%);
+	background: radial-gradient(ellipse at center, #fff 40%,#949494 100%);
+}
+.btn-success {
+	color: #f3faf4;
+	background: #429a49;
+	background: -moz-linear-gradient(top, #46a34e 0%, #429a49 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#46a34e), color-stop(100%,#429a49));
+	background: -webkit-linear-gradient(top, #46a34e 0%,#429a49 100%);
+	background: -o-linear-gradient(top, #46a34e 0%,#429a49 100%);
+	background: -ms-linear-gradient(top, #46a34e 0%,#429a49 100%);
+	background: linear-gradient(to bottom, #46a34e 0%,#429a49 100%);
+	border-color: #317236;
+}
+.btn-success:hover {
+	background: #4aac52;
+}
+.btn-success:active {
+	background: #46a34e;
+	background: -moz-radial-gradient(center, ellipse cover, #46a34e 40%, #317236 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(40%,#46a34e), color-stop(100%,#317236));
+	background: -webkit-radial-gradient(center, ellipse cover, #46a34e 40%,#317236 100%);
+	background: -o-radial-gradient(center, ellipse cover, #46a34e 40%,#317236 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #46a34e 40%,#317236 100%);
+	background: radial-gradient(ellipse at center, #46a34e 40%,#317236 100%);
+}
+.btn-primary {
+	background: #2966bf;
+	background: -moz-linear-gradient(top, #2966bf 0%, #2761b5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2966bf), color-stop(100%,#2761b5));
+	background: -webkit-linear-gradient(top, #2966bf 0%,#2761b5 100%);
+	background: -o-linear-gradient(top, #2966bf 0%,#2761b5 100%);
+	background: -ms-linear-gradient(top, #2966bf 0%,#2761b5 100%);
+	background: linear-gradient(to bottom, #2966bf 0%,#2761b5 100%);
+	border-color: #1d4886;
+}
+.btn-primary:hover {
+	background: #2c6dcb;
+}
+.btn-primary:active {
+	background: #2966bf;
+	background: -moz-radial-gradient(center, ellipse cover, #2966bf 40%, #1d4887 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(40%,#2966bf), color-stop(100%,#1d4887));
+	background: -webkit-radial-gradient(center, ellipse cover, #2966bf 40%,#1d4887 100%);
+	background: -o-radial-gradient(center, ellipse cover, #2966bf 40%,#1d4887 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #2966bf 40%,#1d4887 100%);
+	background: radial-gradient(ellipse at center, #2966bf 40%,#1d4887 100%);
+}
+.btn-danger {
+	background: #b23636;
+	background: -moz-linear-gradient(top, #b23636 0%, #aa3333 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b23636), color-stop(100%,#aa3333));
+	background: -webkit-linear-gradient(top, #b23636 0%,#aa3333 100%);
+	background: -o-linear-gradient(top, #b23636 0%,#aa3333 100%);
+	background: -ms-linear-gradient(top, #b23636 0%,#aa3333 100%);
+	background: linear-gradient(to bottom, #b23636 0%,#aa3333 100%);
+	border-color: #7c2727;
+}
+.btn-danger:hover {
+	background: #b64040;
+}
+.btn-danger:active {
+	background: #b23636;
+	background: -moz-radial-gradient(center, ellipse cover, #b23636 40%, #7f2525 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(40%,#b23636), color-stop(100%,#7f2525));
+	background: -webkit-radial-gradient(center, ellipse cover, #b23636 40%,#7f2525 100%);
+	background: -o-radial-gradient(center, ellipse cover, #b23636 40%,#7f2525 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #b23636 40%,#7f2525 100%);
+	background: radial-gradient(ellipse at center, #b23636 40%,#7f2525 100%);
 }
 .sp-header-bot input[type=search] {
 	width: 214px;
 	background-color: #b2b8c6;
 	border: 1px solid #949ca4;
-	outline: none;
 	padding: 10px 5px;
 	color: #fafbfd;
 	font-weight: bold;
-	font-size: 11px;
 }
 .panel {
 	border-radius: 0;
