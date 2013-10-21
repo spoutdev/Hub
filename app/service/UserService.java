@@ -2,6 +2,7 @@ package service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -77,7 +78,11 @@ public class UserService extends BaseUserService {
 		if (identity.avatarUrl().isDefined()) {
 			user.avatarURL = identity.avatarUrl().get();
 		}
-		if (user.roles.size() == 0) {
+		if (user.roles == null) {
+            user.roles = new ArrayList<SecurityRole>();
+            user.roles.add(SecurityRole.findByRoleName("user"));
+        }
+        if (user.roles.size() == 0) {
 			user.roles.add(SecurityRole.findByRoleName("user"));
 		}
 		return user;
