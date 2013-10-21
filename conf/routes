@@ -36,3 +36,6 @@ POST    /api/v1/login               controllers.APIAuthController.authenticateBy
 # Resource
 GET     /resource                   controllers.ResourceController.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
 GET     /resource/show              controllers.ResourceController.show(id: Long)
+
+# Forum
+GET     /forum                      controllers.ForumController.index

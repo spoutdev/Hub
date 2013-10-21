@@ -19,4 +19,4 @@ notifications:
 
 env:
   # Version of Play Framework to use.
-  - PLAY_VERSION=2.1.3
+  - PLAY_VERSION=2.1.5
