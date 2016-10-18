@@ -71,7 +71,6 @@ public class UserService extends BaseUserService {
 		if (identity.email().isDefined()) {
 			user.email = identity.email().get();
 		}
-
 		if (identity.passwordInfo().isDefined()) {
 			user.password = identity.passwordInfo().get().password();
 		}
